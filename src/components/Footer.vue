@@ -17,7 +17,7 @@
           </p>
         </div>
         <div class="md:text-right">
-          <h3 class="text-md mb-4 font-semibold text-gray-700">Conecta conmigo</h3>
+          <h4 class="mb-4 font-semibold text-gray-700">Conecta conmigo</h4>
           <div class="flex items-center gap-4 md:justify-end" role="list">
             <SocialLink
               v-for="profile in siteData.profiles"
@@ -43,7 +43,7 @@
       </div>
 
       <div class="mt-6">
-        <h3 class="mb-2 text-sm font-semibold text-gray-700">Aviso Legal</h3>
+        <h4 class="mb-1 font-semibold text-gray-700">Aviso Legal</h4>
         <p class="text-xs text-gray-600">
           Esta herramienta es orientativa y no sustituye la valoración de un profesional sanitario.
         </p>
