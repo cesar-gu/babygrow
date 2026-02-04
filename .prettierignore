@@ -1,0 +1,10 @@
+dist
+build
+node_modules
+.astro
+.env
+.env.*
+*.lock
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

@@ -1,0 +1,214 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Preguntas Frecuentes - BabyGrow"
+  description="Respuestas a las preguntas más comunes sobre percentiles de crecimiento infantil. Aprende cómo interpretar resultados y monitorear el desarrollo de tu hijo."
+  keywords="preguntas frecuentes percentiles, cómo interpretar percentiles, peso del bebé, altura del niño, percentil 50, tablas de crecimiento OMS"
+>
+  <section class="py-12 md:py-16">
+    <div class="container-content max-w-4xl">
+      <h1 class="mb-10 text-2xl font-bold text-gray-900 md:mb-12 md:text-3xl">
+        Preguntas Frecuentes
+      </h1>
+
+      <div class="space-y-5 md:space-y-8">
+        <article class="card">
+          <h2 class="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
+            ¿Qué son los percentiles?
+          </h2>
+          <p class="text-sm text-gray-700 md:text-base">
+            Los percentiles son medidas estadísticas que indican la posición relativa de un niño
+            comparado con otros de su misma edad y sexo. Por ejemplo, si un niño está en el P50
+            (percentil 50) de peso, significa que el 50% de los niños de su edad pesan menos que él
+            y el 50% pesa más.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
+            ¿Para qué edades funciona esta herramienta?
+          </h2>
+          <p class="text-sm text-gray-700 md:text-base">
+            BabyGrow está diseñada para niños desde el nacimiento (0 días) hasta los 5 años de edad
+            (1825 días). Fuera de este rango, la herramienta no proporcionará resultados precisos.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
+            ¿De dónde provienen los datos?
+          </h2>
+          <p class="text-sm text-gray-700 md:text-base">
+            Todos los datos de percentiles utilizados en BabyGrow provienen de la Organización
+            Mundial de la Salud (OMS), que son las tablas de referencia más utilizadas a nivel
+            internacional para evaluar el crecimiento infantil.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">¿Qué significa cada métrica?</h2>
+          <div class="space-y-4 text-gray-700">
+            <section>
+              <h4 class="font-semibold">Peso para la edad:</h4>
+              <p>Indica si el peso del niño es adecuado para su edad.</p>
+            </section>
+            <section>
+              <h4 class="font-semibold">Talla para la edad:</h4>
+              <p>Evalúa si la altura/longitud es apropiada para la edad del niño.</p>
+            </section>
+            <section>
+              <h4 class="font-semibold">Peso para su altura:</h4>
+              <p>Indica la proporcionalidad entre el peso y la altura del niño.</p>
+            </section>
+            <section>
+              <h4 class="font-semibold">Perímetro cefálico:</h4>
+              <p>
+                Monitorea el crecimiento de la cabeza, importante para el desarrollo neurológico.
+              </p>
+            </section>
+            <section>
+              <h4 class="font-semibold">Índice de Masa Corporal (IMC):</h4>
+              <p>Relación entre peso y altura, presentada con percentiles ajustados por edad.</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">
+            ¿Es esta herramienta un sustituto de una consulta médica?
+          </h2>
+          <p class="text-gray-700">
+            <strong>No.</strong> BabyGrow es una herramienta <strong>orientativa</strong> y
+            <strong>educativa</strong> solamente. No sustituye la evaluación profesional de un pediatra
+            o especialista en crecimiento infantil. Siempre consulte con un profesional sanitario si tiene
+            dudas sobre el crecimiento de su hijo.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">¿Se almacenan mis datos?</h2>
+          <p class="text-gray-700">
+            No. Todos los cálculos se realizan localmente en su dispositivo. BabyGrow no recopila,
+            almacena, procesa ni transmite datos personales. Su privacidad está completamente
+            garantizada.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">
+            ¿Puedo usar esta herramienta en móvil?
+          </h2>
+          <p class="text-gray-700">
+            Sí, BabyGrow está completamente optimizada para dispositivos móviles. Puede acceder
+            desde cualquier navegador web en su teléfono o tablet.
+          </p>
+        </article>
+
+        <div class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">
+            ¿Hay costos asociados a BabyGrow?
+          </h2>
+          <p class="text-gray-700">
+            No. BabyGrow es completamente gratuita y no tiene publicidad. Es una herramienta
+            educativa sin costo alguno.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="mb-3 text-xl font-semibold text-gray-900">
+            ¿Qué debo hacer si los resultados me preocupan?
+          </h2>
+          <p class="text-gray-700">
+            Si los percentiles están fuera del rango normal, se recomienda contactar con el pediatra
+            de su hijo para una evaluación profesional. El contexto clínico completo es importante
+            para interpretar correctamente los resultados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué son los percentiles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los percentiles son medidas estadísticas que indican la posición relativa de un niño comparado con otros de su misma edad y sexo. Por ejemplo, si un niño está en el P50 (percentil 50) de peso, significa que el 50% de los niños de su edad pesan menos que él y el 50% pesa más."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Para qué edades funciona esta herramienta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BabyGrow está diseñada para niños desde el nacimiento (0 días) hasta los 5 años de edad (1825 días). Fuera de este rango, la herramienta no proporcionará resultados precisos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿De dónde provienen los datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todos los datos de percentiles utilizados en BabyGrow provienen de la Organización Mundial de la Salud (OMS), que son las tablas de referencia más utilizadas a nivel internacional para evaluar el crecimiento infantil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa cada métrica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peso para la edad: Indica si el peso del niño es adecuado para su edad. Talla para la edad: Evalúa si la altura/longitud es apropiada para la edad del niño. Peso para su altura: Indica la proporcionalidad entre el peso y la altura del niño. Perímetro cefálico: Monitorea el crecimiento de la cabeza, importante para el desarrollo neurológico. Índice de Masa Corporal (IMC): Relación entre peso y altura, presentada con percentiles ajustados por edad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es esta herramienta un sustituto de una consulta médica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. BabyGrow es una herramienta orientativa y educativa solamente. No sustituye la evaluación profesional de un pediatra o especialista en crecimiento infantil. Siempre consulte con un profesional sanitario si tiene dudas sobre el crecimiento de su hijo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se almacenan mis datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Todos los cálculos se realizan localmente en su dispositivo. BabyGrow no recopila, almacena, procesa ni transmite datos personales. Su privacidad está completamente garantizada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo usar esta herramienta en móvil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, BabyGrow está completamente optimizada para dispositivos móviles. Puede acceder desde cualquier navegador web en su teléfono o tablet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay costos asociados a BabyGrow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. BabyGrow es completamente gratuita y no tiene publicidad. Es una herramienta educativa sin costo alguno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué debo hacer si los resultados me preocupan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si los percentiles están fuera del rango normal, se recomienda contactar con el pediatra de su hijo para una evaluación profesional. El contexto clínico completo es importante para interpretar correctamente los resultados."
+          }
+        }
+      ]
+    }
+  </script>
+</BaseLayout>
