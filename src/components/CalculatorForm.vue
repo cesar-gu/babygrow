@@ -284,16 +284,6 @@ import {
 import { initializeAllChartData } from '@utils/chartData';
 import type { CalculationResult, PercentileChartData, Gender } from '@interfaces/index';
 
-import wfaBoys from '@data/wfa_boys.json';
-import wfaGirls from '@data/wfa_girls.json';
-import lhfaBoys from '@data/lhfa_boys.json';
-import lhfaGirls from '@data/lhfa_girls.json';
-import wflBoys from '@data/wfl_boys.json';
-import wflGirls from '@data/wfl_girls.json';
-import hcfaBoys from '@data/hcfa_boys.json';
-import hcfaGirls from '@data/hcfa_girls.json';
-import bfaBoys from '@data/bfa_boys.json';
-import bfaGirls from '@data/bfa_girls.json';
 const form = reactive({
   birthDate: '',
   gender: 'male' as Gender,
@@ -317,6 +307,34 @@ const result = ref<CalculationResult | null>(null);
 
 const chartData = reactive(initializeAllChartData());
 
+async function loadDatasets() {
+  const [wfaBoys, wfaGirls, lhfaBoys, lhfaGirls, wflBoys, wflGirls, hcfaBoys, hcfaGirls, bfaBoys, bfaGirls] = await Promise.all([
+    import('@data/wfa_boys.json').then(m => m.default),
+    import('@data/wfa_girls.json').then(m => m.default),
+    import('@data/lhfa_boys.json').then(m => m.default),
+    import('@data/lhfa_girls.json').then(m => m.default),
+    import('@data/wfl_boys.json').then(m => m.default),
+    import('@data/wfl_girls.json').then(m => m.default),
+    import('@data/hcfa_boys.json').then(m => m.default),
+    import('@data/hcfa_girls.json').then(m => m.default),
+    import('@data/bfa_boys.json').then(m => m.default),
+    import('@data/bfa_girls.json').then(m => m.default),
+  ]);
+
+  return {
+    wfaBoys,
+    wfaGirls,
+    lhfaBoys,
+    lhfaGirls,
+    wflBoys,
+    wflGirls,
+    hcfaBoys,
+    hcfaGirls,
+    bfaBoys,
+    bfaGirls,
+  };
+}
+
 async function handleSubmit() {
   clearErrors(errors);
 
@@ -338,26 +356,13 @@ async function handleSubmit() {
   try {
     isLoading.value = true;
 
-    const datasetsMap = {
-      wfa_boys: wfaBoys,
-      wfa_girls: wfaGirls,
-      lhfa_boys: lhfaBoys,
-      lhfa_girls: lhfaGirls,
-      wfl_boys: wflBoys,
-      wfl_girls: wflGirls,
-      hcfa_boys: hcfaBoys,
-      hcfa_girls: hcfaGirls,
-      bfa_boys: bfaBoys,
-      bfa_girls: bfaGirls,
-    };
+    const datasets = await loadDatasets();
 
-    const wfaDataset = form.gender === 'male' ? datasetsMap['wfa_boys'] : datasetsMap['wfa_girls'];
-    const lhfaDataset =
-      form.gender === 'male' ? datasetsMap['lhfa_boys'] : datasetsMap['lhfa_girls'];
-    const wflDataset = form.gender === 'male' ? datasetsMap['wfl_boys'] : datasetsMap['wfl_girls'];
-    const hcfaDataset =
-      form.gender === 'male' ? datasetsMap['hcfa_boys'] : datasetsMap['hcfa_girls'];
-    const bfaDataset = form.gender === 'male' ? datasetsMap['bfa_boys'] : datasetsMap['bfa_girls'];
+    const wfaDataset = form.gender === 'male' ? datasets.wfaBoys : datasets.wfaGirls;
+    const lhfaDataset = form.gender === 'male' ? datasets.lhfaBoys : datasets.lhfaGirls;
+    const wflDataset = form.gender === 'male' ? datasets.wflBoys : datasets.wflGirls;
+    const hcfaDataset = form.gender === 'male' ? datasets.hcfaBoys : datasets.hcfaGirls;
+    const bfaDataset = form.gender === 'male' ? datasets.bfaBoys : datasets.bfaGirls;
 
     if (!wfaDataset || !lhfaDataset || !wflDataset || !hcfaDataset || !bfaDataset) {
       throw new Error('Uno o más datasets no están disponibles');
