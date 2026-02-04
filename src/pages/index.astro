@@ -70,14 +70,14 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   </section>
 
   <!-- Metrics Section -->
-  <section class="bg-gray-50 py-16 md:py-20" aria-label="Métricas disponibles">
+  <section class="bg-gray-50" aria-label="Métricas disponibles">
     <div class="container-content">
       <h2 class="mb-10 text-center text-2xl font-bold text-gray-900 md:mb-12 md:text-3xl">
         Métricas Disponibles
       </h2>
 
       <div class="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+        <article class="card">
           <div class="mb-3 text-3xl" aria-hidden="true">⚖️</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Peso para la edad</h3>
           <p class="text-xs text-gray-600 md:text-sm">
@@ -85,7 +85,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           </p>
         </article>
 
-        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+        <article class="card">
           <div class="mb-3 text-3xl" aria-hidden="true">📏</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Talla para la edad</h3>
           <p class="text-xs text-gray-600 md:text-sm">
@@ -93,7 +93,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           </p>
         </article>
 
-        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+        <article class="card">
           <div class="mb-3 text-3xl" aria-hidden="true">📊</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Peso para altura</h3>
           <p class="text-xs text-gray-600 md:text-sm">
@@ -101,7 +101,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           </p>
         </article>
 
-        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+        <article class="card">
           <div class="mb-3 text-3xl" aria-hidden="true">🧠</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Perímetro cefálico</h3>
           <p class="text-xs text-gray-600 md:text-sm">
@@ -109,25 +109,25 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           </p>
         </article>
 
-        <div class="rounded-lg bg-white p-4 shadow-sm md:p-6">
-          <div class="mb-3 text-3xl">📈</div>
+        <article class="card">
+          <div class="mb-3 text-3xl" aria-hidden="true">📈</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">
             Índice de Masa Corporal
           </h3>
           <p class="text-xs text-gray-600 md:text-sm">
             Relación entre peso y altura con percentiles por edad.
           </p>
-        </div>
+        </article>
 
-        <div class="rounded-lg bg-white p-4 shadow-sm md:p-6">
-          <div class="mb-3 text-3xl">📉</div>
+        <article class="card">
+          <div class="mb-3 text-3xl" aria-hidden="true">📉</div>
           <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">
             Gráficos interactivos
           </h3>
           <p class="text-xs text-gray-600 md:text-sm">
             Visualiza todos los percentiles y tu posición en cada métrica.
           </p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
