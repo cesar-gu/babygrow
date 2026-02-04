@@ -1,17 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-
-const isMenuOpen = ref(false);
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-</script>
-
 <template>
   <header class="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-sm" role="banner">
     <div class="container-content flex items-center justify-between py-4">
@@ -33,9 +19,21 @@ const closeMenu = () => {
 
       <!-- Navigation Desktop -->
       <nav class="hidden gap-6 md:flex" aria-label="Navegación principal">
-        <a href="/babygrow/" class="text-md font-medium text-gray-700 hover:text-primary">Inicio</a>
-        <a href="/babygrow/calculate" class="text-md font-medium text-gray-700 hover:text-primary">Calcular</a>
-        <a href="/babygrow/faq" class="text-md font-medium text-gray-700 hover:text-primary">Preguntas Frecuentes</a>
+        <a
+          href="/babygrow/"
+          :class="isActiveLink('/babygrow/') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
+        >Inicio</a>
+        <a
+          href="/babygrow/calculate"
+          :class="isActiveLink('/babygrow/calculate') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
+        >Calcular</a>
+        <a
+          href="/babygrow/faq"
+          :class="isActiveLink('/babygrow/faq') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
+        >Preguntas Frecuentes</a>
       </nav>
 
       <!-- Author Credit -->
@@ -88,19 +86,22 @@ const closeMenu = () => {
       <div class="flex flex-col gap-4">
         <a
           href="/babygrow/"
-          class="text-md font-medium text-gray-700 hover:text-primary"
+          :class="isActiveLink('/babygrow/') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
           @click="closeMenu"
           >Inicio</a
         >
         <a
           href="/babygrow/calculate"
-          class="text-md font-medium text-gray-700 hover:text-primary"
+          :class="isActiveLink('/babygrow/calculate') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
           @click="closeMenu"
           >Calcular</a
         >
         <a
           href="/babygrow/faq"
-          class="text-md font-medium text-gray-700 hover:text-primary"
+          :class="isActiveLink('/babygrow/faq') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
+          class="text-md font-medium transition-colors"
           @click="closeMenu"
           >Preguntas Frecuentes</a
         >
@@ -122,3 +123,30 @@ const closeMenu = () => {
     </nav>
   </header>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+const isMenuOpen = ref(false);
+const currentPath = ref('');
+
+onMounted(() => {
+  currentPath.value = window.location.pathname;
+});
+
+const isActiveLink = (href: string): boolean => {
+  if (!currentPath.value) return false;
+
+  const normalizedPath = currentPath.value.replace(/\/$/, '') || '/';
+  const normalizedHref = href.replace(/\/$/, '') || '/';
+  return normalizedPath === normalizedHref;
+};
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+</script>
