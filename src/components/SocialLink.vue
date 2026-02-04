@@ -9,7 +9,7 @@
   >
     <svg
       v-if="network === 'linkedin'"
-      class="h-5 w-5"
+      class="h-5 w-5 text-gray-700"
       fill="currentColor"
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -21,7 +21,7 @@
 
     <svg
       v-else-if="network === 'github'"
-      class="h-5 w-5"
+      class="h-5 w-5 text-gray-700"
       fill="currentColor"
       viewBox="0 0 24 24"
       aria-hidden="true"
@@ -33,7 +33,7 @@
 
     <svg
       v-else-if="network === 'gitlab'"
-      class="h-5 w-5"
+      class="h-5 w-5 text-gray-700"
       fill="currentColor"
       viewBox="0 0 24 24"
       aria-hidden="true"
