@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Dispara el workflow cuando hay un push a la rama main
   push:
     branches: [main]
-  # Permite disparo manual desde Actions
   workflow_dispatch:
 
-# Establecer permisos de GITHUB_TOKEN para desplegar en GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Solo permite una ejecución simultánea, lo que evita conflictos
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -40,7 +36,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
@@ -53,4 +49,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
