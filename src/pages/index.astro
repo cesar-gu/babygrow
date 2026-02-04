@@ -1,0 +1,154 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="BabyGrow - Calculadora de Percentiles Pediátricos | OMS"
+  description="Calcula percentiles de crecimiento infantil (0-5 años) usando datos de la OMS. Herramienta orientativa gratuita para monitorear el desarrollo de tu hijo con gráficos interactivos."
+  keywords="percentiles, crecimiento infantil, OMS, calculadora de percentiles, bebés, niños, desarrollo infantil, salud pediátrica, tablas de crecimiento"
+>
+  <!-- Hero Section -->
+  <section
+    class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20"
+    aria-label="Sección de bienvenida"
+  >
+    <div class="container-content">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="mb-4 animate-slide-up text-3xl font-bold text-gray-900 md:mb-6 md:text-5xl">
+          Monitorea el crecimiento de tu hijo
+        </h1>
+        <p class="mb-6 text-base text-gray-700 md:mb-8 md:text-lg">
+          BabyGrow es una herramienta orientativa que calcula percentiles de crecimiento infantil
+          basándose en los datos de referencia de la Organización Mundial de la Salud (OMS).
+        </p>
+        <nav
+          class="flex flex-col gap-3 sm:flex-row sm:justify-center md:gap-4"
+          aria-label="Navegación principal"
+        >
+          <a href="/babygrow/calculate" class="btn-primary"> Comenzar Cálculo </a>
+          <a href="#features" class="btn-secondary"> Conocer más </a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 md:py-20" aria-label="Características principales">
+    <div class="container-content">
+      <h2 class="mb-10 text-center text-2xl font-bold text-gray-900 md:mb-12 md:text-3xl">
+        ¿Cómo funciona?
+      </h2>
+
+      <div class="grid gap-6 md:grid-cols-3 md:gap-8">
+        <article class="card">
+          <div class="mb-4 text-4xl" aria-hidden="true">📊</div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 md:text-xl">Datos de la OMS</h3>
+          <p class="text-sm text-gray-600 md:text-base">
+            Utilizamos tablas de percentiles certificadas por la Organización Mundial de la Salud
+            para garantizar precisión.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="mb-4 text-4xl" aria-hidden="true">⚡</div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 md:text-xl">Cálculo Instantáneo</h3>
+          <p class="text-sm text-gray-600 md:text-base">
+            Obtén resultados inmediatos con visualización clara mediante gráficos interactivos.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="mb-4 text-4xl" aria-hidden="true">🔒</div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 md:text-xl">Privacidad Total</h3>
+          <p class="text-sm text-gray-600 md:text-base">
+            Todos los cálculos se realizan localmente. No almacenamos ni transmitimos datos
+            personales.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <section class="bg-gray-50 py-16 md:py-20" aria-label="Métricas disponibles">
+    <div class="container-content">
+      <h2 class="mb-10 text-center text-2xl font-bold text-gray-900 md:mb-12 md:text-3xl">
+        Métricas Disponibles
+      </h2>
+
+      <div class="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl" aria-hidden="true">⚖️</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Peso para la edad</h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Monitorea si el peso es adecuado para la edad del niño.
+          </p>
+        </article>
+
+        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl" aria-hidden="true">📏</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Talla para la edad</h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Evalúa el crecimiento en longitud o altura.
+          </p>
+        </article>
+
+        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl" aria-hidden="true">📊</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Peso para altura</h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Proporcionalidad entre peso y altura del niño.
+          </p>
+        </article>
+
+        <article class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl" aria-hidden="true">🧠</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">Perímetro cefálico</h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Monitorea el desarrollo neurológico a través del crecimiento de la cabeza.
+          </p>
+        </article>
+
+        <div class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl">📈</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">
+            Índice de Masa Corporal
+          </h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Relación entre peso y altura con percentiles por edad.
+          </p>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <div class="mb-3 text-3xl">📉</div>
+          <h3 class="mb-2 text-base font-semibold text-gray-900 md:text-lg">
+            Gráficos interactivos
+          </h3>
+          <p class="text-xs text-gray-600 md:text-sm">
+            Visualiza todos los percentiles y tu posición en cada métrica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-20">
+    <div class="container-content">
+      <div
+        class="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 p-8 text-center text-white md:p-12"
+      >
+        <h2 class="mb-3 text-2xl font-bold md:mb-4 md:text-3xl">¿Listo para comenzar?</h2>
+        <p class="mb-6 text-sm opacity-90 md:mb-8 md:text-lg">
+          Calcula los percentiles de crecimiento de tu hijo en menos de un minuto.
+        </p>
+        <a
+          href="/babygrow/calculate"
+          class="inline-block rounded-lg bg-white px-6 py-2 font-semibold text-blue-600 transition-all hover:shadow-lg md:px-8 md:py-3"
+        >
+          Ir a la Calculadora
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

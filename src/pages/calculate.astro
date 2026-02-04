@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CalculatorForm from '@components/CalculatorForm.vue';
+import Disclaimer from '@components/Disclaimer.vue';
+---
+
+<BaseLayout
+  title="Calcular Percentiles de Crecimiento - BabyGrow"
+  description="Usa nuestra calculadora interactiva de percentiles para monitorear el crecimiento de tu hijo. Ingresa datos y obtén resultados instantáneos basados en datos de la OMS."
+  keywords="calcular percentiles, percentil peso, percentil altura, crecimiento infantil, calculadora de crecimiento, desarrollo del bebé"
+>
+  <main>
+    <section class="py-12">
+      <div class="container-content">
+        <h1 class="mb-8 text-3xl font-bold text-gray-900">Calculadora de Percentiles</h1>
+
+        <!-- Componente Vue hidratado -->
+        <CalculatorForm client:load />
+
+        <Disclaimer client:load />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

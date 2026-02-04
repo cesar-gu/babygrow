@@ -1,0 +1,111 @@
+---
+import '@styles/globals.css';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  keywords?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = 'BabyGrow - Calculadora de Percentiles Pediátricos',
+  description = 'Calcula percentiles de crecimiento infantil (0-5 años) usando datos de la OMS. Herramienta orientativa para monitorear el desarrollo de tu hijo.',
+  image = '/babygrow/og-image.png',
+  keywords = 'percentiles, crecimiento infantil, OMS, calculadora, bebés, niños, desarrollo infantil, salud pediátrica',
+  noindex = false,
+} = Astro.props as Props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="César Gutiérrez" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="BabyGrow" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/babygrow/favicon.svg" />
+    <link rel="apple-touch-icon" href="/babygrow/favicon.svg" />
+    <link rel="mask-icon" href="/babygrow/favicon.svg" color="#10b981" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Schema.org JSON-LD -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebApplication',
+            name: 'BabyGrow',
+            description:
+              'Calculadora de percentiles de crecimiento infantil basada en datos de la OMS',
+            url: 'https://cesar-gu.github.io/babygrow',
+            applicationCategory: 'MedicalApplication',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+            },
+          },
+          {
+            '@type': 'Organization',
+            name: 'BabyGrow',
+            url: 'https://cesar-gu.github.io/babygrow',
+            sameAs: ['https://github.com/cesar-gu'],
+          },
+          {
+            '@type': 'Person',
+            name: 'César Gutiérrez',
+            url: 'https://cesar-gu.github.io/babygrow',
+            sameAs: ['https://github.com/cesar-gu', 'https://www.linkedin.com/in/cesargupe/'],
+          },
+        ],
+      })}
+    />
+
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-screen flex-col bg-gray-50 text-gray-900">
+    <Header client:load />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

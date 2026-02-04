@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /babygrow/
+Allow: /babygrow/calculate
+Allow: /babygrow/faq
+Disallow: /babygrow/api/
+
+Sitemap: https://cesar-gu.github.io/babygrow/sitemap.xml
