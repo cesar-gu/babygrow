@@ -54,7 +54,7 @@
                 typeof $event === 'number' ? $event : $event ? parseFloat($event) : undefined
             "
             placeholder="ej: 7.5"
-            step="0.1"
+            step="0.001"
             min="0"
             max="50"
             :error="errors.weight"
@@ -71,7 +71,7 @@
                 typeof $event === 'number' ? $event : $event ? parseFloat($event) : undefined
             "
             placeholder="ej: 65.5"
-            step="0.1"
+            step="0.001"
             min="0"
             max="150"
             :error="errors.height"
@@ -88,7 +88,7 @@
                 typeof $event === 'number' ? $event : $event ? parseFloat($event) : undefined
             "
             placeholder="ej: 42.5"
-            step="0.1"
+            step="0.001"
             min="0"
             max="60"
             :error="errors.headCircumference"
