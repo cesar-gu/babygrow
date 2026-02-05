@@ -33,7 +33,7 @@
           href="/babygrow/faq"
           :class="isActiveLink('/babygrow/faq') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
           class="text-md font-medium transition-colors"
-        >Preguntas Frecuentes</a>
+        >Preguntas frecuentes</a>
       </nav>
 
       <!-- Author Credit -->
@@ -103,7 +103,7 @@
           :class="isActiveLink('/babygrow/faq') ? 'text-primary font-bold' : 'text-gray-700 hover:text-primary'"
           class="text-md font-medium transition-colors"
           @click="closeMenu"
-          >Preguntas Frecuentes</a
+          >Preguntas frecuentes</a
         >
         <div class="border-t border-gray-200 pt-4">
           <div class="flex gap-1 text-sm italic text-gray-700">

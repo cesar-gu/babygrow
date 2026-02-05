@@ -17,7 +17,7 @@
           </p>
         </div>
         <div class="md:text-right">
-          <h4 class="mb-4 font-semibold text-gray-700">Conecta conmigo</h4>
+          <h4 class="mb-3 font-semibold text-gray-700">Conecta conmigo</h4>
           <div class="flex items-center gap-4 md:justify-end" role="list">
             <SocialLink
               v-for="profile in siteData.profiles"
