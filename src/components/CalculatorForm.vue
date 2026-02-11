@@ -394,7 +394,7 @@ async function handleSubmit() {
 
     result.value = calculationResult;
 
-    buildChartData(
+    await buildChartData(
       calculationResult,
       form,
       wfaDataset,
@@ -413,7 +413,7 @@ async function handleSubmit() {
   }
 }
 
-function buildChartData(
+async function buildChartData(
   calculationResult: CalculationResult,
   formData: typeof form,
   wfaDataset: any,
@@ -460,7 +460,12 @@ function buildChartData(
     };
   };
 
+  // Función auxiliar para distribuir trabajo pesado
+  const delay = () => new Promise(resolve => setTimeout(resolve, 0));
+
+  // Procesar cada métrica de forma distribuida para no bloquear la UI
   if (calculationResult.metrics.weight) {
+    await delay();
     const wfaSeries = buildPercentileSeries(wfaDataset);
     chartData.weight = {
       ...wfaSeries,
@@ -472,6 +477,7 @@ function buildChartData(
   }
 
   if (calculationResult.metrics.height) {
+    await delay();
     const lhfaSeries = buildPercentileSeries(lhfaDataset);
     chartData.height = {
       ...lhfaSeries,
@@ -483,6 +489,7 @@ function buildChartData(
   }
 
   if (calculationResult.metrics.weightForHeight && formData.height && formData.weight) {
+    await delay();
     const wflSeries = buildPercentileSeries(wflDataset, 'age');
     chartData.weightForHeight = {
       ...wflSeries,
@@ -494,6 +501,7 @@ function buildChartData(
   }
 
   if (calculationResult.metrics.headCircumference) {
+    await delay();
     const hcfaSeries = buildPercentileSeries(hcfaDataset);
     chartData.headCircumference = {
       ...hcfaSeries,
@@ -505,6 +513,7 @@ function buildChartData(
   }
 
   if (calculationResult.metrics.bmi) {
+    await delay();
     const bfaSeries = buildPercentileSeries(bfaDataset);
     chartData.bmi = {
       ...bfaSeries,
